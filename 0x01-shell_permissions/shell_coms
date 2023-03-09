@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 echo 'readme ya permission'>README.md
 echo -e '#!/bin/bash\nsu betty'>0-iam_betty
 echo -e '#!/bin/bash\nwhoami'>1-who_am_i
