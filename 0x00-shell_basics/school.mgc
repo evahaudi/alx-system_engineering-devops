@@ -1,1 +1,2 @@
-file -m school.mgc <filename>
+#!/bin/bash
+for file in "$@"; do file -m school.mgc "$file"; don
