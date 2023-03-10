@@ -1,0 +1,3 @@
+git add .
+git commit -m 'Another day, another commit'
+git push
