@@ -19,9 +19,10 @@ echo -e '#!/bin/bash\nrm *~'>101-clean_emacs
 echo -e '#!/bin/bash\nmkdir -p welcome/to/school'>102-tree
 echo -e '#!/bin/bash\nls -xamp'>103-commas
 echo -e '0 string SCHOOL School data\n!:mime School'>school.mgc
+file -C -m school.mgc
 chmod +x *
 chmod -x README.md
-ls
+chmod -x school.mgc
 cd ..
 git add .
 git commit -m 'Run that script'
