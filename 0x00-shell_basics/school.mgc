@@ -1,2 +1,2 @@
 #!/bin/bash
-for file in "$@"; do file -m school.mgc "$file"; don
+file --magic-file=/tmp/magic/school.mgc --mime-type *
