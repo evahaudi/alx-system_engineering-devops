@@ -1,4 +1,2 @@
-0
-string
-SCHOOL
-\!:mime application/school
+#!/bin/bash
+0 string SCHOOL school data file
