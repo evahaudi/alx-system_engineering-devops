@@ -1,0 +1,27 @@
+#!/bin/bash
+echo -e '#!/bin/bash\npwd'>0-current_working_directory
+echo -e '#!/bin/bash\nls'>1-listit
+echo -e '#!/bin/bash\ncd /root'>2-bring_me_home
+echo -e '#!/bin/bash\nls -l'>3-listfiles
+echo -e '#!/bin/bash\nls -la'>4-listmorefiles
+echo -e '#!/bin/bash\nls -aln'>5-listfilesdigitonly
+echo -e '#!/bin/bash\nmkdir /tmp/my_first_directory'>6-firstdirectory
+echo -e '#!/bin/bash\nmv /tmp/betty /tmp/my_first_directory'>7-movethatfile
+echo -e '#!/bin/bash\nrm /tmp/my_first_directory/betty'>8-firstdelete
+echo -e '#!/bin/bash\nrmdir /tmp/my_first_directory'>9-firstdirdeletion
+echo -e '#!/bin/bash\ncd -'>10-back
+echo -e '#!/bin/bash\nls -la . .. /boot'>11-lists
+echo -e '#!/bin/bash\nfile /tmp/iamafile'>12-file_type
+echo -e '#!/bin/bash\nln -s /bin/ls __ls__'>13-symbolic_link
+echo -e '#!/bin/bash\ncp -u *.html ..'>14-copy_html
+echo -e '#!/bin/bash\nmv [[:upper:]]* /tmp/u'>100-lets_move
+echo -e '#!/bin/bash\nrm *~'>101-clean_emacs
+echo -e '#!/bin/bash\nmkdir -p welcome/to/school'>102-tree
+echo -e '#!/bin/bash\nls -xamp'>103-commas
+echo -e '0 string SCHOOL School data\n!:mime School'>school.mgc
+chmod +x *
+chmod -x README.md
+ls
+cd ..
+git add -m 'Run that script'
+git push
