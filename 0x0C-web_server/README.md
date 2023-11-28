@@ -1,17 +1,29 @@
-# Web server
-Project done during **Software Engineering studies** at **ALX School**. It aims to learn about the roles of web servers and their processes (parent and child), and DNS roles.
+## Web Server
 
-## Technologies
-* Scripts written in Bash 5.1
-* Tested on Ubuntu 20.04 LTS
+### Description of what each file shows:
+* Files that start with:
+0. transfer local file to server
+1. skeleton script to install nginx server and update landing page
+2. domain name from [Gandi](https://www.gandi.net/en)
+3. build on #1; add redirection
+4. build on #3; add 404 page with string "Ceci n'est pas une page"
+5. design custom 404 page
 
-## Files
+### Resources
+* [How the web works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web)
+* [Nginx](https://en.wikipedia.org/wiki/Nginx)
+* [Child process](https://www.gnu.org/software/libc/manual/html_node/Processes.html#Processes)
+* [Root and sub domain](http://support.landingi.com/english/publishing-and-connecting-domains/root-domain-and-subdomain-the-differences)
+* [HTTP requests](https://www.tutorialspoint.com/http/http_methods.html)
+* [HTTP redirection](https://moz.com/learn/seo/redirection)
+* [Not found HTTP response code](https://en.wikipedia.org/wiki/HTTP_404)
+* [Logs files on Linux](https://www.cyberciti.biz/faq/ubuntu-linux-gnome-system-log-viewer/)
+* Inside server --> ```/usr/share/nginx/html/```  ;  ```/etc/nginx/sites-available/default```
+### Environment
+* Language: Bash Scripts
+* OS: Ubuntu 14.04 LTS
+* Styleguide: Shellcheck
 
-| Filename | Description |
-| -------- | ----------- |
-| `0-transfer_file` | Transfers a file from our client to a server |
-| `1-install_nginx_web_server` | Configures an Ubuntu machine to install NGINX web server |
-| `2-setup_a_domain_name` | Contains the domain name server of a created web site |
-| `3-redirection` | Configures an Ubuntu machine to make a redirection |
-| `4-not_found_page_404` | Configures a Ubuntu machine to have a custom 404 page |
-| `7-puppet_install_nginx_web_server.pp` | Configures a Ubuntu machine to make a redirection and a custom 404 page |
+---
+### Authors
+Robert Kamau Njonjo
