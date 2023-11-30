@@ -2,12 +2,11 @@
 # Script to install and configure Nginx web server
 
 # Install Nginx
-apt-get update
-apt-get -y install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
 
 # Ensure Nginx is listening on port 80
-sed -i 's/80 default_server/80 default_server; root \/usr\/share\/nginx\/html/' /etc/nginx/sites-available/default
-
+sudo sed -i 's/listen\s*80;/listen 80;/g' /etc/nginx/sites-available/default
 # Reload Nginx configuration
 service nginx reload
 
