@@ -8,10 +8,10 @@ sudo apt-get -y install nginx
 # Ensure Nginx is listening on port 80
 sudo sed -i 's/listen\s*80;/listen 80;/g' /etc/nginx/sites-available/default
 # Reload Nginx configuration
-service nginx reload
+sudo service nginx reload
 
 # Create index.html with "Hello World!" content
-echo "Hello World!" > /usr/share/nginx/html/index.html
+sudo echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html > /dev/null
 
 # Check if Nginx is running
 if pgrep -x "nginx" >/dev/null
