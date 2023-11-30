@@ -11,7 +11,7 @@ sudo sed -i 's/listen\s*80;/listen 80;/g' /etc/nginx/sites-available/default
 sudo service nginx reload
 
 # Create index.html with "Hello World!" content
-sudo echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html > /dev/null
+sudo echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 
 # Check if Nginx is running
 if pgrep -x "nginx" >/dev/null
