@@ -11,12 +11,12 @@ sudo apt-get install -y nginx
 sudo service nginx start
 
 # Create a default Nginx configuration file
-echo "server {
+sudo bash -c 'cat <<EOF > /etc/nginx/sites-available/default
+server {
     listen 80;
     server_name localhost;
 
     location / {
-        echo 'Hello World!';
         root /var/www/html;
         index index.html;
     }
@@ -24,7 +24,8 @@ echo "server {
     location /redirect_me {
         return 301 http://www.example.com/redirected_page;
     }
-}" | sudo tee /etc/nginx/sites-available/default
+}
+EOF'
 
 # Reload Nginx to apply the new configuration
 sudo service nginx reload
