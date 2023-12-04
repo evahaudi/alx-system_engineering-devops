@@ -26,8 +26,7 @@ server {
     }
 }
 EOF'
-# create an index.html file with the string Hello, World!
-echo "Hello, World" | sudo tee /var/www/html/index.html > /dev/null
+
 # Reload Nginx to apply the new configuration
 sudo service nginx reload
 
