@@ -1,4 +1,29 @@
 #!/usr/bin/env bash
-# A script that Configures nginx to run and listen to port 80
-sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
-service nginx restart
+# This script configures Nginx to listen on port 80 of all the server's active IPv4 IPs
+
+# Check if ss command exists
+if ! command -v ss &>/dev/null; then
+    echo "Error: ss command not found. Please make sure the 'iproute2' package is installed."
+    exit 1
+fi
+
+# Check if Nginx is running and listening on port 80
+if ! ss -tuln | grep ':80' > /dev/null; then
+    echo "Nginx is not listening on port 80. Configuring..."
+
+    # Modify Nginx configuration to listen on port 80
+    sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+
+    # Restart Nginx
+    service nginx restart
+
+    # Check if Nginx is now listening on port 80
+    if ss -tuln | grep ':80' > /dev/null; then
+        echo "Nginx is now listening on port 80"
+    else
+        echo "Failed to configure Nginx to listen on port 80"
+    fi
+else
+    echo "Nginx is already listening on port 80"
+fi
+
