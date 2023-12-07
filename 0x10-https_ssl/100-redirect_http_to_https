@@ -39,9 +39,9 @@ frontend evah_front_end
     bind *:443 ssl crt /etc/haproxy/certs/www.evah-audi.tech/.pem
     http-request redirect scheme https unless { ssl_fc }
     http-request set-header X-Forwarded-Proto https
-    default_backend evah_back_end
+    default_backend audi_back_end
 
-backend evah_back_end
+backend audi_back_end
     balance roundrobin
     server 333119-web-01 35.175.128.0:80 check
     server 333119-web-02 100.25.4.246:80 check 
