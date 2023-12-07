@@ -11,14 +11,19 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend  besthor_frontend
+frontend  evah_frontend
         bind *:80
         mode http
-        default_backend besthor_backend
-backend besthor_backend
+        default_backend audi_backend
+        timeout client 30s 
+       
+backend audi_backend
         balance roundrobin
-        server 176572-web-01 54.165.168.252:80 check
-        server 176572-web-02 34.237.91.136:80 check
+        server 333119-web-01 35.175.128.0:80 check
+        server 333119-web-02 100.25.4.246:80 check
+        timeout server 30s
+        timeout connect 5s
+        timeout client 30s
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
