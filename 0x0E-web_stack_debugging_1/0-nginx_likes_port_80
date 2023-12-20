@@ -1,20 +1,5 @@
 #!/usr/bin/env bash
+# debugging nginx port 80
 
-# Check Nginx status (alternative method)
-nginx_status=$(ps -ef | grep nginx | grep -v grep)
-if [ -z "$nginx_status" ]; then
-    echo "Nginx is not running. Starting Nginx..."
-    # Command to start Nginx if it's not running (modify as per your environment)
-    # Example: sudo service nginx start
-else
-    echo "Nginx is running."
-fi
-
-# Check if Nginx is listening on port 80 (alternative method)
-port_check=$(ss -tln | awk '{print $4}' | grep ':80')
-if [ -z "$port_check" ]; then
-    echo "Nginx is not listening on port 80."
-else
-    echo "Nginx is listening on port 80."
-fi
-
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
