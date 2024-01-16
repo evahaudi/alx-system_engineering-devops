@@ -1,13 +1,5 @@
-## API Advanced
-> This repo covers how to use the Reddit API and how to recurse.
+# `API advanced`
 
-### Resources:
-* [Reddit API](https://www.reddit.com/dev/api/)
+![](https://www.ruudharreman.nl/wp-content/uploads/2022/11/image-15.png)
+#
 
-### Environment
-* Language: Python 3.4.3
-* OS: Ubuntu 14.04 LTS
-* Style guidelines: [PEP 8 (version 1.7) for Python 3.5](https://www.python.org/dev/peps/pep-0008/) || [Google Style Python Docstrings](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
----
-### Authors
-Everlyne akinyi
