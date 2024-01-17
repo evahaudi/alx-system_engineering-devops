@@ -7,8 +7,8 @@ import requests
 
 def number_of_subscribers(subreddit):
     """Queries to Reddit API"""
-    
-    # Updated User-Agent, client ID, and client secret
+
+    # Updated User-Agent, client ID, and client Secret
     u_agent = 'evah/1.0 (by /u/Rude-Entrepreneur52)'
     client_id = 'vkP5KBd-vWbZS_9JvQkzRw'
     client_secret = 'BmDfHc4nRAHa0GiG9B2M3ZwQfI4HMA'
@@ -20,10 +20,6 @@ def number_of_subscribers(subreddit):
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     res = requests.get(url, headers=headers, allow_redirects=False)
-
-    # Print response status code and content for debugging
-    print(f"Response Status Code: {res.status_code}")
-    print(f"Response Content: {res.text}")
 
     # Check if the response status code is not 200
     if res.status_code != 200:
@@ -42,4 +38,3 @@ def number_of_subscribers(subreddit):
         return 0
 
     return dic['data']['subscribers']
-
