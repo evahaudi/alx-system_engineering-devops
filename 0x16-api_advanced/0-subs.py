@@ -5,22 +5,41 @@ the number of subscribers for a given subreddit.
 """
 import requests
 
-
 def number_of_subscribers(subreddit):
-    """ Queries to Reddit API """
-    u_agent = 'Mozilla/5.0'
+    """Queries to Reddit API"""
+    
+    # Updated User-Agent, client ID, and client secret
+    u_agent = 'evah/1.0 (by /u/Rude-Entrepreneur52)'
+    client_id = 'vkP5KBd-vWbZS_9JvQkzRw'
+    client_secret = 'BmDfHc4nRAHa0GiG9B2M3ZwQfI4HMA'
 
     headers = {
-        'User-Agent': u_agent
+        'User-Agent': u_agent,
+        'Authorization': f'Basic {client_id}:{client_secret}'
     }
 
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
     res = requests.get(url, headers=headers, allow_redirects=False)
+
+    # Print response status code and content for debugging
+    print(f"Response Status Code: {res.status_code}")
+    print(f"Response Content: {res.text}")
+
+    # Check if the response status code is not 200
     if res.status_code != 200:
         return 0
-    dic = res.json()
+
+    try:
+        # Attempt to parse JSON only if content is not empty
+        dic = res.json()
+    except ValueError:
+        print("Error: Unable to parse JSON response.")
+        return 0
+
     if 'data' not in dic:
         return 0
     if 'subscribers' not in dic.get('data'):
         return 0
-    return res.json()['data']['subscribers']
+
+    return dic['data']['subscribers']
+
