@@ -5,20 +5,23 @@ the top ten hot posts of a subreddit
 """
 import requests
 
-
 def top_ten(subreddit):
-    """ Queries to Reddit API """
-    u_agent = 'Mozilla/5.0'
+    """Queries to Reddit API"""
+    # Updated User-Agent, client ID, and client Secret
+    u_agent = 'evah/1.0 (by /u/Rude-Entrepreneur52)'
+    client_id = 'vkP5KBd-vWbZS_9JvQkzRw'
+    client_secret = 'BmDfHc4nRAHa0GiG9B2M3ZwQfI4HMA'
 
     headers = {
-        'User-Agent': u_agent
+        'User-Agent': u_agent,
+        'Authorization': f'Basic {client_id}:{client_secret}'
     }
 
     params = {
         'limit': 10
     }
 
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     res = requests.get(url,
                        headers=headers,
                        params=params,
