@@ -5,6 +5,7 @@ the top ten hot posts of a subreddit
 """
 import requests
 
+
 def top_ten(subreddit):
     """Queries to Reddit API"""
     # Updated User-Agent, client ID, and client Secret
