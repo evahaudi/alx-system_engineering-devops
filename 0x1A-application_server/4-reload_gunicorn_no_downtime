@@ -2,14 +2,13 @@
 # Description: Gracefully restart Gunicorn with no downtime
 # Check if Gunicorn process is running
 if pgrep gunicorn > /dev/null; then
-    # Get the process IDs of Gunicorn master and workers
+    # Get the process ID of Gunicorn master
     master_pid=$(pgrep -o gunicorn)
-    worker_pids=$(pgrep -P "$master_pid")
 
     # Send HUP signal to the master process for graceful restart
     kill -HUP "$master_pid"
 
-    # Wait for the master and workers to gracefully restart
+    # Wait for the master to gracefully restart
     sleep 2
 
     # Print "OK" after successfully restarting Gunicorn
@@ -21,4 +20,3 @@ else
     # Print an error message if Gunicorn is not running
     echo "Gunicorn is not running"
 fi
-
