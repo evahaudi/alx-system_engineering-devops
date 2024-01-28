@@ -21,3 +21,4 @@ else
     # Print an error message if Gunicorn is not running
     echo "Gunicorn is not running"
 fi
+
