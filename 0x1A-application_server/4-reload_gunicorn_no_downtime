@@ -1,3 +1,15 @@
 #!/usr/bin/env bash
-# Gracefully reloads Gunicorn.
-pgrep gunicorn | xargs kill -HUP
+
+# Description: Gracefully reloads Gunicorn.
+
+# Check if Gunicorn process is running
+if pgrep gunicorn > /dev/null; then
+    # Gracefully reload Gunicorn
+    pgrep gunicorn | xargs kill -HUP
+    
+    # Print "OK" if the reload was successful
+    echo "OK"
+else
+    # Print an error message if Gunicorn is not running
+    echo "Gunicorn is not running"
+fi
