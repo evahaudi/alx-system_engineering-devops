@@ -16,7 +16,7 @@ if pgrep gunicorn > /dev/null; then
     echo "OK"
 
     # Print the updated Gunicorn processes
-    ps auxf | grep gunicorn
+    pgrep -af gunicorn
 else
     # Print an error message if Gunicorn is not running
     echo "Gunicorn is not running"
