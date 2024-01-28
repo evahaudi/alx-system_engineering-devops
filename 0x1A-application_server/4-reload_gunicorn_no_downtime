@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 # Description: Gracefully restart Gunicorn
-
 # Check if Gunicorn process is running
 if pgrep gunicorn > /dev/null; then
     # Gracefully restart Gunicorn
