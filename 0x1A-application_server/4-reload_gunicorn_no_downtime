@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# Description: Gracefully reloads Gunicorn.
+# Description: Gracefully restart Gunicorn
 
 # Check if Gunicorn process is running
 if pgrep gunicorn > /dev/null; then
-    # Gracefully reload Gunicorn
+    # Gracefully restart Gunicorn
     pgrep gunicorn | xargs kill -HUP
     
-    # Print "OK" if the reload was successful
+    # Print "OK" after successfully restarting Gunicorn
     echo "OK"
 else
     # Print an error message if Gunicorn is not running
